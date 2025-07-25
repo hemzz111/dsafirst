@@ -2,7 +2,7 @@ package Backtracking;
 
 import java.util.*;
 public class Subset2 {
-
+//return non-adjacent subsets only
     static int count=0;
 
     public static void solve(int i,int arr[],int size,int tar){

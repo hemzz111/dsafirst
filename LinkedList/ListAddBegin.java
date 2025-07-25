@@ -27,24 +27,27 @@ public class ListAddBegin {
     }
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
-
+        System.out.println("Enter the size of the node: ");
         int n=sc.nextInt();
-       sc.close();
+       
 
         if(n<=0){
             System.out.print("Empty list.");
             return;
         }
-
+        sc.close();
+        System.out.println("Enter the data to insert the node: ");
         int data=sc.nextInt();
         Node head=new Node(data);
         Node curr=head;
 
+        sc.close();
         for(int i=2;i<=n;i++){
             data=sc.nextInt();
             curr.next=new Node(data);
             curr=curr.next;
         }
+        
         System.out.print("Before insert a new node: ");
         traversal(head);
 
