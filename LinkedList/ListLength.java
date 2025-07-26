@@ -25,12 +25,12 @@ public class ListLength {
         System.out.println("Enter the size of the node: ");
 
         int n=sc.nextInt();
+        sc.close();
         if(n<=0){
             System.out.println("Empty list");
             return;
         }
-        sc.close();
-        System.out.println("Enter the data to insert into the node: ");
+        //System.out.println("Enter the data to insert into the node: ");
         int data=sc.nextInt();
         Node head=new Node(data);
         Node curr=head;
