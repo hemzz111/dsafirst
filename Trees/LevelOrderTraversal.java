@@ -1,7 +1,7 @@
 package Trees;
-
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 class Node{
     int data;
@@ -15,10 +15,10 @@ class Node{
 public class LevelOrderTraversal {
     Node root=null;
 
-    Node insert(Node root,int data){
+    void insert(int data){
         Node newnode=new Node(data);
 
-        if(root==null) return newnode;
+        if(root==null) return;
 
         Queue<Node>q=new LinkedList<>();
         q.add(root);
@@ -43,8 +43,8 @@ public class LevelOrderTraversal {
     }
     void inorder(Node root){
         if(root!=null){
-            System.out.print(root.data+" ");
             inorder(root.left);
+            System.out.print(root.data+" ");
             inorder(root.right);
         }
     }
@@ -65,6 +65,27 @@ public class LevelOrderTraversal {
             q.add(temp.right);
 
         }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
 
+        System.out.println("Enter the number of nodes: ");
+        int n=sc.nextInt();
+        LevelOrderTraversal l=new LevelOrderTraversal();
+
+        System.out.println("Enter the "+n+" number of values: ");
+       // Node root=null;
+        for(int i=0;i<n;i++){
+            int val=sc.nextInt();
+            sc.close();
+            l.insert(val);
+        }
+        System.out.println("Inorder Traversal: ");
+        l.inorder(l.root);
+        System.out.println();
+
+        System.out.println("Level Order Traversal: ");
+        l.levelorder(l.root);
     }
 }
